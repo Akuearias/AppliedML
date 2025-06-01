@@ -8,7 +8,7 @@ iris = datasets.load_iris()
 
 # 1 feature
 X = iris['data'][:, 3:]
-y = (iris['target'] == 2).astype(int)
+y = (iris['target'] == 2).astype(int) # 1 if virginica else 0
 
 log_reg = LogisticRegression()
 log_reg.fit(X, y)
