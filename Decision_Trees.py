@@ -18,3 +18,17 @@ tree_classifier = DecisionTreeClassifier(max_depth=3,
 tree_classifier.fit(X, y)
 print(tree_classifier.predict_proba([[5, 1.5]]))
 print(tree_classifier.predict([[5, 1.5]]))
+
+# Decision Trees are not only for classification, but also for regression.
+
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.datasets import fetch_california_housing
+
+data = fetch_california_housing()
+X, y = data.data, data.target
+
+tree_regressor = DecisionTreeRegressor(max_depth=2, min_samples_split=3, min_samples_leaf=3)
+
+tree_regressor.fit(X, y)
+print(tree_regressor.predict([[9., 45., 10.0, 3.0, 350., 3.0, 40.00, -125.0]]))
+
